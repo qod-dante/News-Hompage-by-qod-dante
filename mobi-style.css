@@ -1,0 +1,370 @@
+
+/* =#=#=#=#=# One-column Grid Layout =#=#=#=#=# */
+
+body {
+    grid-template-columns: auto;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+    'mobile-nav-wrapper'
+    'header'
+    'main'
+    'attribution';
+    height: auto;
+    background-color: hsl(36, 100%, 99%);
+    min-width: 280px;
+    padding: 1rem;
+    row-gap: 1rem;
+    font-family: Inter, sans-serif;
+}
+
+#mobile-nav-wrapper {
+    grid-area: mobile-nav-wrapper;
+    width: 66.6vw;
+    height: 100vh;
+    grid-template-areas:
+    'close-hamburger-container'
+    'mobile-nav-container';
+    grid-template-rows: 1fr 9fr;
+    grid-template-columns: auto;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: none;
+    z-index: 2;
+    color:hsl(240, 100%, 5%);
+}
+
+.close-hamburger-container {
+    grid-area: close-hamburger-container;
+    display: grid;
+    justify-content: end;
+    padding: 1.5rem 1rem 0 0;
+    width: fit-ontent;
+    height: fit-ontent;
+}
+
+#close-hamburger {
+    width: 30px;
+    height: 30px;
+}
+
+.mobile-nav-container {
+    grid-area: mobile-nav-container;
+    margin-top: 5.5rem;
+}
+
+.mobile-nav-list li {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+}
+
+.mobile-nav-list a:link, .mobile-nav-list a:visted {
+    color:hsl(240, 100%, 5%);
+}
+
+.mobile-nav-list a:hover, .mobile-nav-list a:active {
+    color:hsl(5, 85%, 63%);
+}
+
+
+header {
+    grid-area: header;
+    grid-template-areas: 'logo hamburger';
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.logo {
+    grid-area: logo;
+    width: 50px;
+    height: 30px;
+}
+
+#hamburger {
+    grid-area: hamburger;
+    width: 40px;
+    height: 15px;
+}
+
+main {
+    grid-area: main;
+    grid-template-areas:
+    'block-image-container'
+    'bright-future'
+    'read-more-container'
+    'side-new-section'
+    'tech-trio-block';
+    grid-template-columns: auto;
+    grid-template-rows: repeat(5, auto);
+    row-gap: 1rem;
+}
+
+.block-image-desktop {
+    height: auto;
+}
+
+.block-image-mobile {
+    height: auto;
+}
+
+.block-image-container {
+    grid-area: block-image-container;
+}
+
+.bright-future {
+    grid-area: bright-future;
+}
+
+.bright-future h1 {
+    font-family: Inter, sans-serfif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: hsl(240, 100%, 5%);
+    line-height: 1;
+}
+
+.read-more-container {
+    grid-area: read-more-container;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    margin-bottom: 3rem;
+    padding-right: 0.5rem;
+}
+
+.read-more-btn {
+    width: 55%;
+    letter-spacing: 4px;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.read-more-btn:link, .read-more-btn:visited {
+    background-color: hsl(5, 85%, 63%);
+    color: #fff;
+}
+
+.read-more-btn:hover, .read-more-btn:active {
+    color: #fff;
+    background-color: hsl(240, 100%, 5%);
+}
+
+.read-more-text {
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.side-new-section {
+    grid-area: side-new-section;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+    'side-new-section-h2'
+    'cars-block'
+    'AI-block'
+    'VC-block';
+    grid-auto-flow: row;
+    background-color: hsl(240, 100%, 5%);
+}
+
+.side-new-section h2 {
+    grid-area: side-new-section-h2;
+    color: hsl(35, 77%, 62%);
+    font-size: 2rem;
+    padding: 0.6rem 0 0.5rem 0.5rem;
+    margin: 0.6rem 0 1rem 0.5rem;
+}
+
+.cars-block {
+    grid-area: cars-block;
+    border-bottom: 1px solid hsl(233, 8%, 79%);
+    margin: 0 1rem;
+    padding: 0 0 1.4rem;
+}
+
+.AI-block {
+    grid-area: AI-block;
+    border-bottom: 1px solid hsl(233, 8%, 79%);
+    margin: 0 1rem;
+    padding: 1.4rem 0;
+}
+
+.VC-block {
+    grid-area: VC-block;
+    margin: 0 1rem;
+    padding: 1.4rem 0;
+}
+
+.cars-block, .AI-block, .VC-block {
+    grid-auto-flow: row;
+    color: #fff;
+    line-height: 1.7;
+}
+
+.thumbnail {
+    width: 100px;
+    height: 130px;
+}
+
+.tech-trio-block {
+    grid-area: tech-trio-block;
+    grid-template-areas:
+    'ttch1'
+    'ttch2'
+    'ttch3';
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: auto;
+    row-gap: 1rem;
+    line-height: 1.7;
+    max-width: 343px;
+}
+
+.tech-trio-child1 {
+    grid-area: ttch1;
+    grid-template-columns: 3fr 7fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    'thumbnail1 tt1h3'
+    'thumbnail1 tt1h4'
+    'thumbnail1 tt1p';
+    column-gap: 1.5rem;
+}
+
+.thumbnail1 {
+    grid-area: thumbnail1;
+}
+
+.tech-trio-child1 h3 {
+    grid-area: tt1h3;
+    font-size: 2rem;
+}
+
+.tech-trio-child1 h4 {
+    grid-area: tt1h4;
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.tech-trio-child1 p {
+    grid-area: tt1p;
+}
+
+.tech-trio-child2 {
+    grid-area: ttch2;
+    grid-template-columns: 3fr 7fr;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+    'thumbnail2 tt2h3'
+    'thumbnail2 tt2h4'
+    'thumbnail2 tt2p';
+    column-gap: 1.5rem;
+}
+
+.thumbnail2 {
+    grid-area: thumbnail2;
+}
+
+.tech-trio-child2 h3 {
+    grid-area: tt2h3;
+    font-size: 2rem;
+    color: hsl(233, 8%, 79%);
+}
+
+.tech-trio-child2 h4 {
+    grid-area: tt2h4;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: hsl(240, 100%, 5%);
+}
+
+.tech-trio-child2 p {
+    grid-area: tt2p;
+}
+
+.tech-trio-child3 {
+    grid-area: ttch3;
+    grid-template-columns: 3fr 7fr;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+    'thumbnail3 tt3h3'
+    'thumbnail3 tt3h4'
+    'thumbnail3 tt3p';
+    column-gap: 1.5rem;
+}
+
+.thumbnail3 {
+    grid-area: thumbnail3;
+}
+
+.tech-trio-child3 h3 {
+    grid-area: tt3h3;
+    font-size: 2rem;
+    color: hsl(233, 8%, 79%);
+}
+
+.tech-trio-child3 h4 {
+    grid-area: tt3h4;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: hsl(240, 100%, 5%);
+}
+
+.tech-trio-child3 p {
+    grid-area: tt3p;
+}
+
+.attribution { 
+    font-size: 11px;
+    grid-area: attribution;
+    margin-top: 2rem;
+}
+
+.attribution a:link, .attribution a:visited {
+    color: hsl(228, 45%, 44%);
+}
+
+.attribution a:hover, .attribution a:active {
+    text-decoration: underline;
+}
+
+/* Quick Styles */
+
+.width100 {
+    width: 100%;
+}
+
+.grid {
+    display: grid;
+}
+
+.grid1r1c {
+    grid-template: auto / auto;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem;
+}
+
+.para {
+    font-size: 15px;
+    color: hsl(236, 13%, 42%);
+}
+
+.new-para {
+    color: hsl(233, 8%, 79%);
+    font-size: 15px;
+}
+
+.text-a-center {
+    text-align: center;
+}
+
+.inline {
+    display: inline;
+}
+
+.in-grid {
+    display: inline-grid;
+}

@@ -5,13 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet"
+        href="mobi-style.css"
+        media="only screen and (max-width: 719px)"
+        type="text/css"
+                                                                          >
   <title>Frontend Mentor | News Homepage</title>
 </head>
-<body>
-  <header>
+<body class="grid width100" onload="closeHamburger()">
+  <div id="darkShadow" onclick="closeHamburger()" class="height100v width100v"></div>
+  <!-- Mobile Navigation Menu Start
+       grid-area: mobile-nav-wrapper
+                                    -->
+  <div id="mobile-nav-wrapper" onblur="closeHamburger()">
+    <div class="close-hamburger-container">
+        <img id="close-hamburger" src="./assets/images/icon-menu-close.svg" alt="Close icon" onclick="closeHamburger()">
+    </div>
+    <nav class="mobile-nav-container">
+        <ul class="mobile-nav-list">
+            <li><a class="deep-dark-blue" href="#">Home</a></li>
+            <li><a class="deep-dark-blue" href="#">New</a></li>
+            <li><a class="deep-dark-blue" href="#">Popular</a></li>
+            <li><a class="deep-dark-blue" href="#">Trending</a></li>
+            <li><a class="deep-dark-blue" href="#">Categories</a></li>
+        </ul>
+    </nav>
+  </div>
+  <!-- Mobile Navigation End -->
+
+  <!-- Desktop Navigation Start
+       grid-area: header 
+                                -->
+  <header class="grid width100">
     <img src="./assets/images/logo.svg" alt="Frontend Mentor News Logo" class="logo">
-    <nav class="nav-container">
-      <ul class="nav-list">
+    <img src="./assets/images/icon-menu.svg" alt="Hamburger menu icon" id="hamburger" onclick="openHamburger()">
+    <nav class="nav-container width100">
+      <ul class="nav-list grid para-fs">
         <li><a href="#">Home</a></li>
         <li><a href="#">New</a></li>
         <li><a href="#">Popular</a></li>
@@ -20,61 +49,101 @@
       </ul>
     </nav>
   </header>
-  <main>
-    <div class="block-image-container">
-      <img src="./assets/images/image-web-3-desktop.jpg" class="block-image-desktop" alt="Building Blocks">
-      <img src="./assets/images/image-web-3-mobile.jpg" class="block-image-mobile" alt="Building Blocks">
+  <!-- Desktop Navigation End-->
+
+  <!-- Main Area Start
+       grid-area: main
+                        -->
+  <main class="grid width100">
+    <!-- Hero Images Container -->
+    <div class="block-image-container width100">
+      <picture>
+        <source media="(min-width: 687px)"
+                srcset="./assets/images/image-web-3-desktop.jpg"
+                class="block-image-desktop width100"
+                alt="Colorful Blocks Hero Image Large"
+                                                                  >
+        <source media="(max-width: 686px)"
+                class="block-image-mobile width100"
+                srcset="./assets/images/image-web-3-mobile.jpg"
+                alt="Colorful Blocks Hero Image Small"
+                                                                  >
+        <img src="./assets/images/image-web-3-desktop.jpg"
+             class="block-image-desktop width100"
+             alt="Colorful Blocks Hero Image Large"
+                                                            >
+      </picture>
     </div>
+    <!-- Hero Images Container end-->
+
+    <!-- Main Heading-->
     <div class="bright-future">
-      <h1>The Bright Future of Web 3.0?</h1>
+      <h1 class="deep-dark-blue">The Bright Future of Web 3.0?</h1>
     </div>
-    <div class="read-more-container">
-      <p class="read-more-text para2">
+    <!-- Main Heading End -->
+
+    <!-- Read More container-->
+    <div class="read-more-container width100 grid">
+      <p class="read-more-text para-fs text-color1">
         We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
         But is it really fulfilling its promise?
       </p>
-      <a href="#" class="read-more-btn btn">READ MORE</a>
+      <a href="#" class="read-more-btn btn text-a-center">READ MORE</a>
     </div>
-    <section class="side-new-section">
-      <h2>New</h2>
+    <!-- Read More container end -->
+
+    <!-- "New" Section start -->
+    <section class="side-new-section grid width100">
+      <h2 class="soft-orange">New</h2>
       <div class="cars-block">
         <h3>Hydrogen VS Electric Cars</h3>
-        <p class="para">Will hydrogen-fueled cars ever catch up to EVs?</p>
+        <p class="text-color2 para-fs">Will hydrogen-fueled cars ever catch up to EVs?</p>
       </div>
       <div class="AI-block">
         <h3>The Downsides of AI Artistry</h3>
-        <p class="para">What are the possible adverse effects of on-demand AI image generation?</p>
+        <p class="text-color2 para-fs">What are the possible adverse effects of on-demand AI image generation?</p>
       </div>
       <div class="VC-block">
         <h3>Is VC Funding Drying Up?</h3>
-        <p class="para">Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+        <p class="text-color2 para-fs">Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
       </div>
     </section>
-    <section class="tech-trio-block">
-      <div class="tech-trio-child1">
+    <!-- "New" Section end -->
+
+    <!-- "Tech Trio" Section start -->
+    <section class="tech-trio-block grid width100">
+      <div class="tech-trio-child1 grid">
         <img src="./assets/images/image-retro-pcs.jpg" alt="Retro Computers" class="thumbnail1 thumbnail">
-        <h3>01</h3>
+        <h3 class="text-color2">01</h3>
         <h4>Reviving Retro PCs</h4>
-        <p class="para2">What happens when old PCs are given modern upgrades?</p>
+        <p class="text-color1 para-fs">What happens when old PCs are given modern upgrades?</p>
       </div>
-      <div class="tech-trio-child2">
+      <div class="tech-trio-child2 grid">
         <img src="./assets/images/image-top-laptops.jpg" alt="Top Laptops of 2022" class="thumbnail2 thumbnail">
-        <h3>02</h3>
+        <h3 class="text-color2">02</h3>
         <h4>Top 10 Laptops of 2022</h4>
-        <p class="para2">Our best picks for various needs and budgets.</p>
+        <p class="text-color1 para-fs">Our best picks for various needs and budgets.</p>
       </div>
-      <div class="tech-trio-child3">
+      <div class="tech-trio-child3 grid">
         <img src="./assets/images/image-gaming-growth.jpg" alt="Playstation 4 Gamepad" class="thumbnail3 thumbnail">
-        <h3>03</h3>
+        <h3 class="text-color2">03</h3>
         <h4>The Growth of Gaming</h4>
-        <p class="para2">How the pandemic has sparked fresh opportunities.</p>
+        <p class="text-color1 para-fs">How the pandemic has sparked fresh opportunities.</p>
       </div>
     </section>
+    <!-- "Tech Trio" Section end-->
   </main>
-  <div class="attribution">
+  <!-- Main Area End -->
+
+  <!--
+    Attribution Area
+    grid-area: attribution
+                            -->
+  <div class="attribution text-a-center">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="https://github.com/qod-dante" target="_blank">qod-dante</a>.
   </div>
+  <!-- Attribution Area end -->
   <script src="./scripts/hamburger.js"></script>
   <noscript>Error! You need JavaScript enabled to see all features!</noscript>
 </body>
