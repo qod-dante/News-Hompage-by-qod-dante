@@ -8,45 +8,97 @@
     font-family: Inter, sans-serif;
 }
 
-/*
-max-width: 1440px
-min-width: 375px
-Soft-Red hsl(5, 85%, 63%)
-Soft orange: hsl(35, 77%, 62%)
-Navigation Dark grayish blue: hsl(236, 13%, 42%)
-New section Very dark blue: hsl(240, 100%, 5%)
-paragraph font-size: 15px
-https://fonts.google.com/specimen/Inter
-weights: 400, 700, 800
-paragraph color: rgb(57, 56, 61)
-*/
+/* =#=#=#=#=# Uh, Shadow, backdrop... thing? =#=#=#=#=# */
 
-/*
-=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=# Desktop Grid Layout =#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
-*/
+#darkShadow {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+/* To submit project /*
+/* https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248 */
+
+/* =#=#=#=#=# Desktop Grid Layout =#=#=#=#=# */
 
 body {
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
+    'mobile-nav-wrapper mobile-nav-wrapper mobile-nav-wrapper'
     'header header header'
     'main main main'
     'attribution attribution attribution';
-    height: auto;
     background-color: hsl(36, 100%, 99%);
-    padding: 5.7rem 9.7rem;
+    padding: 6rem 10.3rem;
     column-gap: 2rem;
     max-width: 1440px;
-    width: 100vw;
 }
+
+    /* =#=#=#=#=# Mobile Navigation Menu Start =#=#=#=#=# */
+
+#mobile-nav-wrapper {
+    grid-area: mobile-nav-wrapper;
+    width: 68.1vw;
+    height: 100vh;
+    grid-template-areas:
+    'close-hamburger-container'
+    'mobile-nav-container';
+    grid-template-rows: 1fr 9fr;
+    grid-template-columns: auto;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: none;
+    z-index: 2;
+}
+
+.close-hamburger-container {
+    grid-area: close-hamburger-container;
+    display: grid;
+    justify-content: end;
+    padding: 1.5rem 1rem 0 0;
+    width: fit-ontent;
+    height: fit-ontent;
+}
+
+#close-hamburger {
+    width: 30px;
+    height: 30px;
+}
+
+.mobile-nav-container {
+    grid-area: mobile-nav-container;
+    margin-top: 5.5rem;
+}
+
+.mobile-nav-list li {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+}
+
+.mobile-nav-list a:hover, .mobile-nav-list a:active {
+    color:hsl(5, 85%, 63%);
+}
+
+#hamburger {
+    grid-area: hamburger;
+    width: 40px;
+    height: 15px;
+}
+
+    /* =#=#=#=#=# Mobile Navigation Menu End =#=#=#=#=# */
+    /* =#=#=#=#=# Desktop Navigation Menu Start =#=#=#=#=# */
 
 header {
     grid-area: header;
-    display: grid;
     grid-template-areas: 'logo nav-container';
     grid-template-columns: 3fr 2fr;
-    width: 100%;
-    margin-bottom: 4.2rem;
+    margin-bottom: 3rem;
+    justify-content: space-between;
 }
 
 .logo {
@@ -57,15 +109,12 @@ header {
 
 .nav-container {
     grid-area: nav-container;
-    width: 100%;
     display: grid;
 }
 
 .nav-list {
-    display: grid;
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: repeat(5, auto);
     justify-content: space-between;
-    font-size: 15px;
 }
 
 .nav-list a:link, .nav-list a:visited {
@@ -76,46 +125,48 @@ header {
     color: hsl(5, 85%, 63%);
 }
 
+    /* =#=#=#=#=# Desktop Navigation Menu End =#=#=#=#=# */
+    /* =#=#=#=#=# Main Area Start =#=#=#=#=# */
+
 main {
     grid-area: main;
-    display: grid;
     grid-template-areas:
     'block-image-container block-image-container side-new-section'
     'bright-future read-more-container side-new-section'
     'tech-trio-block tech-trio-block tech-trio-block';
-    width: 100%;
     column-gap: 2rem;
     row-gap: 1.5rem;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+        /* =#=#=#=#=# Hero Images (See index.html line 60) =#=#=#=#=# */
+
 .block-image-container {
     grid-area: block-image-container;
-    width: 100%;
     height: auto;
 }
 
-.block-image-container img {
-    width: 100%;
+.block-image-desktop {
     height: auto;
 }
 
 .block-image-mobile {
-    display: none;
+    height: auto;
 }
+
+        /* =#=#=#=#=# Hero Images End =#=#=#=#=# */
+        /* =#=#=#=#=# Side Section Start =#=#=#=#=# */
 
 .side-new-section {
     grid-area: side-new-section;
     height: auto;
-    width: 100%;
-    display: grid;
     grid-template-areas:
     'side-new-section-h2'
     'cars-block'
     'AI-block'
     'VC-block';
     grid-template-columns: auto;
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: repeat(4, auto);
     background-color: hsl(240, 100%, 5%);
     color: #fff;
     line-height: 2.0;
@@ -123,29 +174,36 @@ main {
 
 .side-new-section h2 {
     grid-area: side-new-section-h2;
-    color: hsl(35, 77%, 62%);
     padding: 1rem 0 0 1.5rem;
     font-size: 2.5rem;
 }
 
 .cars-block {
     grid-area: cars-block;
-    padding: 0 1rem 0 0.5rem;
+    padding: 0 1rem 1rem 0.5rem;
     border-bottom: 1px solid hsl(233, 8%, 79%);
     margin: 0 1.5rem;
 }
 
 .AI-block {
     grid-area: AI-block;
-    padding: 1rem 1rem 0 0.5rem;
+    padding: 1rem 1rem 1rem 0.5rem;
     border-bottom: 1px solid hsl(233, 8%, 79%);
     margin: 0 1.5rem;
 }
 
 .VC-block {
     grid-area: VC-block;
-    padding: 1rem 2rem 0 1.5rem;
+    padding: 1rem 2rem 1rem 1.5rem;
 }
+
+.cars-block h3:hover, .AI-block h3:hover, .VC-block h3:hover {
+    color:hsl(35, 77%, 62%);
+    cursor: pointer;
+}
+
+        /* =#=#=#=#=# Side Section End =#=#=#=#=# */
+        /* =#=#=#=#=# Main Heading Start =#=#=#=#=# */
 
 .bright-future {
     grid-area: bright-future;
@@ -154,12 +212,14 @@ main {
 .bright-future h1 {
     font-size: 3.6rem;
     font-weight: 800;
-    color: hsl(240, 100%, 5%);
+    line-height: 1;
 }
+
+        /* =#=#=#=#=# Main Heading End =#=#=#=#=# */
+        /* =#=#=#=#=# "Read More" Container Start =#=#=#=#=# */
 
 .read-more-container {
     grid-area: read-more-container;
-    display: grid;
     grid-template-areas:
     'read-more-text'
     'read-more-btn';
@@ -178,10 +238,10 @@ main {
     grid-area: read-more-btn;
     width: 55%;
     height: fit-content;
-    text-align: center;
     letter-spacing: 4px;
     font-weight: 700;
     font-size: 0.9rem;
+    align-self: end;
 }
 
 .read-more-btn:link, .read-more-btn:visited {
@@ -194,31 +254,36 @@ main {
     background-color: hsl(240, 100%, 5%);
 }
 
+        /* =#=#=#=#=# "Read More" Container End =#=#=#=#=# */
+        /* =#=#=#=#=# Technology Area Start =#=#=#=#=# */
+
 .tech-trio-block {
     grid-area: tech-trio-block;
     justify-content: space-between;
-    display: grid;
     grid-template-areas: 'ttch1 ttch2 ttch3';
     grid-template-rows: auto;
     grid-template-columns: 1fr 1fr 1fr;
-    width: 100%;
     column-gap: 2rem;
+    line-height: 1.7;
+    margin-top: 2.5rem;
 }
 
 .thumbnail {
-    width: 75%;
+    max-width: 100px;
+    max-height: 127px;
+    width: 100%;
     height: 100%;
 }
 
 .tech-trio-child1 {
     grid-area: ttch1;
-    display: grid;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: repeat(3, auto);
     grid-template-columns: auto auto;
     grid-template-areas:
     'thumbnail1 tt1h3'
     'thumbnail1 tt1h4'
     'thumbnail1 tt1p';
+    column-gap: 1.5rem;
 }
 
 .thumbnail1 {
@@ -227,7 +292,6 @@ main {
 
 .tech-trio-child1 h3 {
     grid-area: tt1h3;
-    color: hsl(233, 8%, 79%);
     font-size: 2rem;
 }
 
@@ -243,22 +307,22 @@ main {
 
 .tech-trio-child2 {
     grid-area: ttch2;
-    display: grid;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: repeat(3, auto);
     grid-template-columns: auto auto;
     grid-template-areas:
     'thumbnail2 tt2h3'
     'thumbnail2 tt2h4'
     'thumbnail2 tt2p';
+    column-gap: 1.5rem;
 }
 
 .thumbnail2 {
     grid-area: thumbnail2;
+    align-self: end;
 }
 
 .tech-trio-child2 h3 {
     grid-area: tt2h3;
-    color: hsl(233, 8%, 79%);
     font-size: 2rem;
 }
 
@@ -274,22 +338,22 @@ main {
 
 .tech-trio-child3 {
     grid-area: ttch3;
-    display: grid;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: repeat(3, auto);
     grid-template-columns: auto auto;
     grid-template-areas:
     'thumbnail3 tt3h3'
     'thumbnail3 tt3h4'
     'thumbnail3 tt3p';
+    column-gap: 1.5rem;
 }
 
 .thumbnail3 {
     grid-area: thumbnail3;
+    align-self: end;
 }
 
 .tech-trio-child3 h3 {
     grid-area: tt3h3;
-    color: hsl(233, 8%, 79%);
     font-size: 2rem;
 }
 
@@ -303,28 +367,220 @@ main {
     grid-area: tt3p;
 }
 
+.tech-trio-child1 h4:hover, .tech-trio-child2 h4:hover, .tech-trio-child3 h4:hover {
+    color:hsl(5, 85%, 63%);
+    cursor: pointer;
+}
+
+        /* =#=#=#=#=# Technology Area End =#=#=#=#=# */
+    /* =#=#=#=#=# Main Area End =#=#=#=#=# */
+    /* =#=#=#=#=# Attribution Area Start =#=#=#=#=# */
+
 .attribution { 
     font-size: 11px;
-    text-align: center;
     grid-area: attribution;
     margin-top: 2rem;
 }
 
-.attribution a {
+.attribution a:link, .attribution a:visited {
     color: hsl(228, 45%, 44%);
 }
 
-.para {
-    font-size: 15px;
-    color: hsl(233, 8%, 79%);
+.attribution a:hover, .attribution a:active {
+    text-decoration: underline;
 }
 
-.para2 {
+    /* =#=#=#=#=# Attribution Area End =#=#=#=#=# */
+/* =#=#=#=#=# Desktop Grid Layout End =#=#=#=#=# */
+
+/* =#=#=#=#=# Mobile Grid Layout =#=#=#=#=# */
+    /* =#=#=#=#=# Media Queries #=#=#=#=#= */
+
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+    body {
+        padding: 5rem 4rem;
+    }
+}
+
+@media only screen and (min-width: 1093px) and (max-width: 1199px) {
+    body {
+        padding: 3rem 1.4rem;
+    }
+}
+
+@media only screen and (max-width: 1115px) and (min-width: 992px) {
+    body {
+        padding: 6rem 8.6rem;
+        gap: 1.5rem;
+    }
+
+    main {
+        gap: 1.5rem;
+    }
+
+    .read-more-container {
+        row-gap: 0;
+    }
+    
+    .read-more-text {
+        padding-right: 0;
+    }
+    
+    .read-more-btn {
+        align-self: auto;
+    }
+
+    .tech-trio-block {
+        gap: 1.5rem;
+    }
+}
+
+/* =#=#=#=#=# Two-columns Layout =#=#=#=#=# */
+
+@media only screen and (min-width: 720px) and (max-width: 1115px) {
+    body {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        'mobile-wrapper mobile-wrapper'
+        'header header'
+        'main main'
+        'attribution attribution';
+    }
+
+    main {
+        grid-template-areas:
+        'block-image-container block-image-container'
+        'bright-future side-new-section'
+        'read-more-container side-new-section'
+        'tech-trio-block tech-trio-block'
+        'tech-tro-block .';
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tech-trio-block {
+        grid-template-areas:
+        'ttch1 ttch2'
+        'ttch3 .';
+        grid-template-rows: auto auto;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #hamburger {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    header {
+        grid-template-areas: 'logo hamburger';
+        margin-bottom: 1rem;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #hamburger {
+        justify-self: end;
+    }
+
+    .nav-container {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 991px) and (min-width: 768px) {
+    body {
+        padding: 3rem 2rem;
+    }
+
+    .tech-trio-block {
+        gap: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 720px) {
+    body {
+        padding: 2rem;
+        gap: unset;
+    }
+
+    main {
+        row-gap: 1.5rem;
+        column-gap: unset;
+    }
+
+    .tech-trio-block {
+        column-gap: unset;
+        row-gap: 1.5rem;
+    }
+}
+
+/* =#=#=#=#=# For One-column Layout, see ./mobi-style.css (index-html line 8-12) =#=#=#=#=# */
+
+/* =#=#=#=#=# Quick Classes #=#=#=#=#= */
+
+.para-fs {
     font-size: 15px;
+}
+
+.text-a-center {
+    text-align: center;
+}
+
+.text-color1 {
     color: hsl(236, 13%, 42%);
 }
 
+.text-color2 {
+    color: hsl(233, 8%, 79%);
+}
+
+.soft-red {
+    color: hsl(5, 85%, 63%);
+}
+
+.soft-orange {
+    color: hsl(35, 77%, 62%);
+}
+
+.deep-dark-blue {
+    color: hsl(240, 100%, 5%);
+}
+
 .btn {
-    padding: 1rem 1.3rem;
+    padding: 0.8rem 1rem;
+}
+
+.grid {
+    display: grid;
+    display: -ms-grid;
+    display: -moz-grid;
+}
+
+.in-block {
     display: inline-block;
+}
+
+.inline {
+    display: inline;
+}
+
+.flex {
+    display: flex;
+}
+
+.width100 {
+    width: 100%;
+}
+
+.width100v {
+    width: 100vw
+}
+
+.height100 {
+    height: 100%;
+}
+
+.height100v {
+    height: 100vh;
 }
