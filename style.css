@@ -181,6 +181,12 @@ main {
     grid-area: side-new-section-h2;
     padding: 1rem 0 0 1.5rem;
     font-size: 2.5rem;
+    font-family: "Inter Bold", sans-serif;
+}
+
+.side-new-section h3 {
+    font-family: "Inter Bold", sans-serif;
+    font-weight: 700;
 }
 
 .cars-block {
@@ -217,6 +223,7 @@ main {
 .bright-future h1 {
     font-size: 3.6rem;
     font-weight: 800;
+    font-family: "Inter ExtraBold", sans-serif;
     line-height: 1;
 }
 
@@ -305,6 +312,7 @@ main {
     grid-area: tt1h4;
     font-weight: 800;
     font-size: 1.10rem;
+    font-family: "Inter Bold", sans-serif;
 }
 
 .tech-trio-child1 p {
@@ -336,6 +344,7 @@ main {
     grid-area: tt2h4;
     font-weight: 800;
     font-size: 1.10rem;
+    font-family: "Inter Bold", sans-serif;
 }
 
 .tech-trio-child2 p {
@@ -367,6 +376,7 @@ main {
     grid-area: tt3h4;
     font-weight: 800;
     font-size: 1.10rem;
+    font-family: "Inter Bold", sans-serif;
 }
 
 .tech-trio-child3 p {
