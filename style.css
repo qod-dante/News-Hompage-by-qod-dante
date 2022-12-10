@@ -87,6 +87,10 @@ body {
     height: 15px;
 }
 
+#hamburger:hover {
+    cursor: pointer;
+}
+
     /* =#=#=#=#=# Mobile Navigation Menu End =#=#=#=#=# */
     /* =#=#=#=#=# Desktop Navigation Menu Start =#=#=#=#=# */
 
@@ -285,6 +289,7 @@ main {
 
 .thumbnail1 {
     grid-area: thumbnail1;
+    align-self: end;
 }
 
 .tech-trio-child1 h3 {
