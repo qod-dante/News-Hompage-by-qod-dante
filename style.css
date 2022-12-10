@@ -67,6 +67,10 @@ body {
     height: 30px;
 }
 
+#close-hamburger {
+    cursor: pointer;
+}
+
 .mobile-nav-container {
     grid-area: mobile-nav-container;
     margin-top: 5.5rem;
