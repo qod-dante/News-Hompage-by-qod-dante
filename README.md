@@ -67,7 +67,7 @@ JavaScript and React js for now. Enough Said.
 
 ### Useful resources
 
-- [W3Schools](https://w3schools.com) - I'm pretty every developer worth their salt knows this site. But just in case I'm wrong, this is where I found answers and
+- [W3Schools](https://w3schools.com) - I'm pretty sure every developer worth their salt knows this site. But just in case I'm wrong, this is where I found answers and
 examples to the many Grid and Media Query questions I had. It's one of the greatest resources for referencing.
 
 ## Author
