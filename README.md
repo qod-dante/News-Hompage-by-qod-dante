@@ -37,6 +37,7 @@ Users should be able to:
 
 ### Links
 
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/news-homepage-SVTW3-9ZPd)
 - Live Site URL: [Github](https://qod-dante.github.io/News-Hompage-by-qod-dante)
 
 ## My process
